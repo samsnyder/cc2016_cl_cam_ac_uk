@@ -1,4 +1,4 @@
-
+open Dice
 open Ast 
 
 let verbose = ref false 
@@ -302,6 +302,7 @@ let do_oper = function
   | (EQB,  STACK_BOOL m,  STACK_BOOL n) -> STACK_BOOL (m = n)
   | (LT,   STACK_INT m,   STACK_INT n)  -> STACK_BOOL (m < n)
   | (EQI,  STACK_INT m,   STACK_INT n)  -> STACK_BOOL (m = n)
+  | (DICE,  STACK_INT m,   STACK_INT n)  -> STACK_INT (dice m n)
   | (ADD,  STACK_INT m,   STACK_INT n)  -> STACK_INT (m + n)
   | (SUB,  STACK_INT m,   STACK_INT n)  -> STACK_INT (m - n)
   | (MUL,  STACK_INT m,   STACK_INT n)  -> STACK_INT (m * n)

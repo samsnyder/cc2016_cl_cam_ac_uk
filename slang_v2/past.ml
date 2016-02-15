@@ -18,7 +18,7 @@ type type_expr =
 
 type formals = (var * type_expr) list
 
-type oper = ADD | MUL | SUB | LT | AND | OR | EQ | EQB | EQI
+type oper = DICE | ADD | MUL | SUB | LT | AND | OR | EQ | EQB | EQI
 
 type unary_oper = NEG | NOT 
 
@@ -106,6 +106,7 @@ let pp_uop = function
 
 
 let pp_bop = function 
+  | DICE -> "d" 
   | ADD -> "+" 
   | MUL  -> "*" 
   | SUB -> "-" 
@@ -179,6 +180,7 @@ let string_of_uop = function
   | NOT -> "NOT" 
 
 let string_of_bop = function 
+  | DICE -> "DICE" 
   | ADD -> "ADD" 
   | MUL  -> "MUL" 
   | SUB -> "SUB" 

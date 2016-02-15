@@ -1,7 +1,7 @@
 
 type var = string 
 
-type oper = ADD | MUL | SUB | LT | AND | OR | EQB | EQI
+type oper = DICE | ADD | MUL | SUB | LT | AND | OR | EQB | EQI
 
 type unary_oper = NEG | NOT | READ 
 

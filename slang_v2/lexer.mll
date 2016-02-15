@@ -20,6 +20,7 @@ rule token = parse
   | [' ' '\t'] { token lexbuf }
   | '(' { LPAREN }
   | ')' { RPAREN }
+  | "d" { D }
   | "," { COMMA }
   | ":" { COLON }
   | ";" { SEMICOLON }

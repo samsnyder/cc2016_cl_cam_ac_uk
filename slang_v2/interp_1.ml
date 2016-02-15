@@ -13,6 +13,7 @@ Timothy G. Griffin (tgg22@cam.ac.uk)
 *) 
 
 
+open Dice
 open Ast 
 
 let complain = Errors.complain
@@ -125,6 +126,7 @@ let do_oper = function
   | (EQB,  BOOL m,  BOOL n) -> BOOL (m = n)
   | (LT,   INT m,   INT n)  -> BOOL (m < n)
   | (EQI,  INT m,   INT n)  -> BOOL (m = n)
+  | (DICE,  INT m,   INT n)  -> INT (dice m n)
   | (ADD,  INT m,   INT n)  -> INT (m + n)
   | (SUB,  INT m,   INT n)  -> INT (m - n)
   | (MUL,  INT m,   INT n)  -> INT (m * n)
